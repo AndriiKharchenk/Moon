@@ -28,30 +28,37 @@ if (hero) {
   setInterval(slide, 2500);
 }
 
-const forms = document.querySelectorAll('.js-open-modal');
-const modal = document.querySelector('.modal');
-const closeBtn = document.querySelector('.modal__close');
 
-if (modal && forms.length && closeBtn) {
+
+document.addEventListener('DOMContentLoaded', () => {
+  const forms = document.querySelectorAll('form');
+  const modal = document.querySelector('.modal');
+
   forms.forEach((form) => {
     form.addEventListener('submit', (evt) => {
-      evt.preventDefault();
+      evt.preventDefault(); 
+      evt.stopPropagation();
 
-      modal.classList.add('active');
+     
+      if (form.classList.contains('js-open-modal') && modal) {
+        modal.classList.add('active');
+
+        const closeBtn = modal.querySelector('.modal__close');
+        if (closeBtn) {
+          closeBtn.addEventListener('click', () => {
+            modal.classList.remove('active');
+          });
+        }
+
+        modal.addEventListener('click', (e) => {
+          if (e.target === modal) modal.classList.remove('active');
+        });
+      }
+
       form.reset();
     });
   });
-
-  closeBtn.addEventListener('click', () => {
-    modal.classList.remove('active');
-  });
-
-  modal.addEventListener('click', (evt) => {
-    if (evt.target === modal) {
-      modal.classList.remove('active');
-    }
-  });
-}
+});
 
 const btnUp = document.querySelector('.btn__up');
 
@@ -189,65 +196,68 @@ const cartContainer = document.querySelector('.cart__inner');
 const totalSubtotal = document.querySelector('.total__subtotal');
 const totalCart = document.querySelector('.total__cart-total');
 
-// Функция пересчёта всех сумм
-function updateCartTotals() {
-  let subtotal = 0;
-  const cartItems = cartContainer.querySelectorAll('.cart__item');
 
-  cartItems.forEach(item => {
-    const priceEl = item.querySelector('.cart__price');
-    const quantityInput = item.querySelector('.cart__quantity-input');
-    const subtotalEl = item.querySelector('.cart__subtotal-gold');
+if (cartContainer && totalSubtotal && totalCart) {
+  // Функция пересчёта всех сумм
+  function updateCartTotals() {
+    let subtotal = 0;
+    const cartItems = cartContainer.querySelectorAll('.cart__item');
 
-    const price = parseFloat(priceEl.textContent.replace('$', ''));
-    const quantity = parseInt(quantityInput.value) || 1;
-    const itemSubtotal = price * quantity;
+    cartItems.forEach((item) => {
+      const priceEl = item.querySelector('.cart__price');
+      const quantityInput = item.querySelector('.cart__quantity-input');
+      const subtotalEl = item.querySelector('.cart__subtotal-gold');
 
-    subtotalEl.textContent = `$${itemSubtotal.toFixed(2)}`;
-    subtotal += itemSubtotal;
+      const price = parseFloat(priceEl.textContent.replace('$', ''));
+      const quantity = parseInt(quantityInput.value) || 1;
+      const itemSubtotal = price * quantity;
+
+      subtotalEl.textContent = `$${itemSubtotal.toFixed(2)}`;
+      subtotal += itemSubtotal;
+    });
+
+    totalSubtotal.textContent = `$${subtotal.toFixed(2)}`;
+    totalCart.textContent = `$${subtotal.toFixed(2)}`;
+  }
+
+  // Делегируем события на контейнер
+  cartContainer.addEventListener('click', (e) => {
+    const target = e.target;
+    const item = target.closest('.cart__item');
+    if (!item) return;
+
+    const input = item.querySelector('.cart__quantity-input');
+
+    // Кнопка +
+    if (target.classList.contains('qty__btn--plus')) {
+      input.value = parseInt(input.value) + 1;
+      updateCartTotals();
+    }
+
+    // Кнопка -
+    if (target.classList.contains('qty__btn--minus')) {
+      input.value = Math.max(1, parseInt(input.value) - 1);
+      updateCartTotals();
+    }
+
+    // Кнопка удаления
+    if (target.tagName === 'BUTTON' && target.parentElement.classList.contains('cart__delete')) {
+      item.remove();
+      updateCartTotals();
+    }
   });
 
-  totalSubtotal.textContent = `$${subtotal.toFixed(2)}`;
-  totalCart.textContent = `$${subtotal.toFixed(2)}`;
-}
-
-// Делегируем события на контейнер
-cartContainer.addEventListener('click', (e) => {
-  const target = e.target;
-  const item = target.closest('.cart__item');
-  if (!item) return;
-
-  const input = item.querySelector('.cart__quantity-input');
-
-  // Кнопка +
-  if (target.classList.contains('qty__btn--plus')) {
-    input.value = parseInt(input.value) + 1;
-    updateCartTotals();
-  }
-
-  // Кнопка -
-  if (target.classList.contains('qty__btn--minus')) {
-    input.value = Math.max(1, parseInt(input.value) - 1);
-    updateCartTotals();
-  }
-
-  // Кнопка удаления
-  if (target.tagName === 'BUTTON' && target.parentElement.classList.contains('cart__delete')) {
-    item.remove();
-    updateCartTotals();
-  }
-});
-
-// Обработка ручного ввода числа
-cartContainer.addEventListener('input', (e) => {
-  const target = e.target;
-  if (target.classList.contains('cart__quantity-input')) {
-    if (parseInt(target.value) < 1 || isNaN(target.value)) {
-      target.value = 1;
+  // Обработка ручного ввода числа
+  cartContainer.addEventListener('input', (e) => {
+    const target = e.target;
+    if (target.classList.contains('cart__quantity-input')) {
+      if (parseInt(target.value) < 1 || isNaN(target.value)) {
+        target.value = 1;
+      }
+      updateCartTotals();
     }
-    updateCartTotals();
-  }
-});
+  });
 
-// Инициализация при загрузке страницы
-updateCartTotals();
+  // Инициализация при загрузке страницы
+  updateCartTotals();
+}

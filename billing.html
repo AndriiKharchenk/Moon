@@ -85,15 +85,17 @@
                 <div class="billing__form-row7">
                   <div class="billing__form-field">
                     <label for="message">Message</label>
-                    <input class="billing__form-input" type="text" name="message" id="message" placeholder="Type your message here..." />
+                    <textarea class="billing__form-textarea" name="message" id="message" placeholder="Type your message here..."></textarea>
                   </div>
                 </div>
-                <button class="billing__btn-shipping" type="submit">Continue to shipping</button>
+                <div class="billing__buttons">
+                  <div class="billing__button-return">
+                    <img src="images/billing-arrow.svg" alt="" />
+                    <a class="billing__btn-cart" href="cart.html" type="button">Return to cart</a>
+                  </div>
+                  <button class="billing__btn-shipping" type="submit">Continue to shipping</button>
+                </div>
               </form>
-              <div class="billing__buttons">
-                <img src="images/billing-arrow.svg" alt="">
-                <a class="billing__btn-cart" type="button">Return to cart</a>
-              </div>
             </div>
             <div class="billing__col2">
               <div class="billing__info">
@@ -134,8 +136,10 @@
                 <h2 class="billing__payment-title">Payment</h2>
                 <form class="payment__form js-open-modal">
                   <div class="payment__form-row1">
-                    <input class="payment__form-card" name="card" type="radio" />
-                    Credit card
+                    <div class="payment__form-top">
+                      <input class="payment__form-card" name="card" type="radio" />
+                      <p class="payment__form-text">Credit card</p>
+                    </div>
                     <div class="payment__form-icons">
                       <img class="payment__form-img" src="images/payment-card1.svg" alt="visa" />
                       <img class="payment__form-img" src="images/payment-card2.svg" alt="mastercard" />
@@ -152,7 +156,7 @@
                   <div class="payment__form-row4">
                     <div class="payment__form-field">
                       <label class="payment__lable payment__lable--hiden" for="date">Expiration date (MM/YY)</label>
-                      <input class="payment__form-input" name="date" id="date" type="text" placeholder="Expiration date (MM/YY)" required />
+                      <input class="payment__form-input" name="date" id="date" type="text" placeholder="Date (MM/YY)" required />
                     </div>
                     <div class="payment__form-field">
                       <label class="payment__lable payment__lable--hiden" for="code">Security code</label>

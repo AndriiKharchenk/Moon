@@ -476,7 +476,7 @@ body {
 .modal {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.3);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -492,9 +492,11 @@ body {
 
 .modal__content {
   background: #fff;
-  padding: 40px;
+  padding: 50px;
   border-radius: 8px;
   text-align: center;
+  color: #000;
+  max-width: 400px;
 }
 
 .btn__up {
@@ -1522,7 +1524,6 @@ body {
   }
 }
 
-
 .billing {
   padding: 60px 0 80px;
   &__inner {
@@ -1530,59 +1531,204 @@ body {
     grid-template-columns: 638px 1fr;
     gap: 56px;
   }
-  &__col1 {}
   &__col1-title {
     font-family: 'Inter-SemiBold', sans-serif;
     font-size: 20px;
     font-weight: 600;
+    margin-bottom: 40px;
   }
-  &__form {}
-  &__form-row1 {}
-  &__form-field {}
-  &__form-input {}
-  &__form-row2 {}
-  &__form-row3 {}
-  &__form-row4 {}
-  &__form-row5 {}
-  &__form-row6 {}
-  &__form-row7 {}
-  &__btn-shipping {}
-  &__buttons {}
-  &__btn-cart {}
-  &__col2 {}
-  &__info {}
-  &__info-top {}
-  &__info-title {}
-  &__info-box1 {}
-  &__info-item {}
-  &__item-name {}
-  &__item-cost {}
-  &__info-box2 {}
-  &__subtitle {}
-  &__subtitle-item {}
-  &__subtitle-counter {}
-  &__info-box3 {}
-  &__total-title {}
-  &__total-text {}
-  &__payment {}
-  &__payment-title {}
-}
-.js-open-modal {
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  &__form-row1 {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  &__form-field {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  &__form-field label {
+    font-family: 'Inter-SemiBold', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+  &__form-input {
+    font-size: 14px;
+    color: #807f86;
+    padding: 18px 0 21px 16px;
+  }
+  &__form-row2 {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  &__form-row4 {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  &__form-row5 {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  &__form-textarea {
+    height: 140px;
+  }
+  &__btn-shipping {
+    font-family: 'Inter-SemiBold', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #fff;
+    padding: 19px 63px;
+    background-color: #3a3845;
+    align-self: flex-end;
+  }
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__button-return {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  &__btn-cart {
+    font-family: 'Inter-SemiBold', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  &__col2 {
+    display: flex;
+    flex-direction: column;
+  }
+  &__info {
+    margin-bottom: 48px;
+  }
+  &__info-top {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Inter-SemiBold', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #cac9cf;
+  }
+  &__info-title {
+    font-family: 'Inter-SemiBold', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+  }
+  &__info-box1 {
+    font-size: 14px;
+    margin-bottom: 40px;
+  }
+  &__info-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  &__info-box2 {
+    font-family: 'Inter-SemiBold', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #cac9cf;
+  }
+  &__subtitle {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__subtitle-item {
+    margin-bottom: 20px;
+  }
+  &__info-box3 {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Inter-SemiBold', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+  }
+  &__payment {
+    padding: 30px;
+    background-color: #3a3845;
+    color: #fff;
+  }
+  &__payment-title {
+    font-family: 'Inter-SemiBold', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 40px;
+  }
 }
 .payment {
-  &__form {}
-  &__form-row1 {}
-  &__form-card {}
-  &__form-icons {}
-  &__form-img {}
-  &__form-row2 {}
-  &__lable {}
-  &__lable--hiden {}
-  &__form-input {}
-  &__form-row3 {}
-  &__form-row4 {}
-  &__form-field {}
-  &__form-row5 {}
-  &__form-paypal {}
-  &__form-btn {}
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  &__form-row1 {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #cac9cf;
+  }
+  &__form-top {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+  }
+  &__lable--hiden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+  &__form-icons {
+    display: flex;
+  }
+  &__form-img {
+    width: 36px;
+    height: 22px;
+  }
+  &__form-input {
+    width: 100%;
+    background-color: transparent;
+    padding: 16px 10px;
+    border: 1px solid #fff;
+  }
+  &__form-row4 {
+    display: flex;
+    gap: 20px;
+  }
+  &__form-row5 {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 40px;
+  }
+  &__form-btn {
+    font-family: 'Inter-SemiBold', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #fff;
+    padding: 19px 0;
+    border: 1px solid #fff;
+    width: 100%;
+  }
 }
