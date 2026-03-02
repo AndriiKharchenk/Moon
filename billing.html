@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <title>Moon</title>
+  </head>
+  <body>
+    <header></header>
+
+    <main>
+      <nav class="breadcrumbs" aria-label="breadcrumb">
+        <div class="container">
+          <ul class="breadcrumbs__list">
+            <li class="breadcrumbs__item">
+              <a class="breadcrumbs__link" href="/">Home /</a>
+            </li>
+            <li class="breadcrumb__item">
+              <span>Shop</span>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <section class="billing">
+        <div class="container">
+          <div class="billing__inner">
+            <div class="billing__col1">
+              <h2 class="billing__col1-title">Billing Details</h2>
+              <form class="billing__form js-open-modal">
+                <div class="billing__form-row1">
+                  <div class="billing__form-field">
+                    <label for="first-name">First Name</label>
+                    <input class="billing__form-input" type="text" name="first-name" id="first-name" placeholder="Samatha Clarken" required />
+                  </div>
+                  <div class="billing__form-field">
+                    <label for="last-name">Last Name</label>
+                    <input class="billing__form-input" type="text" name="last-name" id="last-name" placeholder="Clarken" required />
+                  </div>
+                </div>
+                <div class="billing__form-row2">
+                  <div class="billing__form-field">
+                    <label for="company">Company</label>
+                    <input class="billing__form-input" type="text" name="company" id="company" placeholder="Moon" />
+                  </div>
+                  <div class="billing__form-field">
+                    <label for="country">Country</label>
+                    <input class="billing__form-input" type="text" name="country" id="country" placeholder="United State" required />
+                  </div>
+                </div>
+                <div class="billing__form-row3">
+                  <div class="billing__form-field">
+                    <label for="address">Street address</label>
+                    <input class="billing__form-input" type="text" name="address" id="address" placeholder="Address" required />
+                  </div>
+                </div>
+                <div class="billing__form-row4">
+                  <div class="billing__form-field">
+                    <label for="city">City</label>
+                    <input class="billing__form-input" type="text" name="city" id="city" placeholder="City" required />
+                  </div>
+                  <div class="billing__form-field">
+                    <label for="state">State</label>
+                    <input class="billing__form-input" type="text" name="state" id="state" placeholder="State" required />
+                  </div>
+                </div>
+                <div class="billing__form-row5">
+                  <div class="billing__form-field">
+                    <label for="code">ZIP Code</label>
+                    <input class="billing__form-input" type="text" name="code" id="code" placeholder="ZIP Code" />
+                  </div>
+                  <div class="billing__form-field">
+                    <label for="phone">Phone</label>
+                    <input class="billing__form-input" type="tel" name="phone" id="phone" placeholder="(123) 456 - 7890" required />
+                  </div>
+                </div>
+                <div class="billing__form-row6">
+                  <div class="billing__form-field">
+                    <label for="email">Email</label>
+                    <input class="billing__form-input" type="email" name="email" id="email" placeholder="example@youremail.com" required />
+                  </div>
+                </div>
+                <div class="billing__form-row7">
+                  <div class="billing__form-field">
+                    <label for="message">Message</label>
+                    <input class="billing__form-input" type="text" name="message" id="message" placeholder="Type your message here..." />
+                  </div>
+                </div>
+                <button class="billing__btn-shipping" type="submit">Continue to shipping</button>
+              </form>
+              <div class="billing__buttons">
+                <img src="images/billing-arrow.svg" alt="">
+                <a class="billing__btn-cart" type="button">Return to cart</a>
+              </div>
+            </div>
+            <div class="billing__col2">
+              <div class="billing__info">
+                <div class="billing__info-top">
+                  <h3 class="billing__info-title">Product</h3>
+                  <h3 class="billing__info-title">Subtotal</h3>
+                </div>
+                <div class="billing__info-box1">
+                  <div class="billing__info-item">
+                    <p class="billing__item-name">Porcelain Dinner Plate (27cm)</p>
+                    <p class="billing__item-cost">$59.00</p>
+                  </div>
+                  <div class="billing__info-item">
+                    <p class="billing__item-name">Ophelia Matte Natural Vase</p>
+                    <p class="billing__item-cost">$168.00</p>
+                  </div>
+                  <div class="billing__info-item">
+                    <p class="billing__item-name">Luana Bowl</p>
+                    <p class="billing__item-cost">$49.00</p>
+                  </div>
+                </div>
+                <div class="billing__info-box2">
+                  <div class="billing__subtitle">
+                    <h4 class="billing__subtitle-item">Subtotal</h4>
+                    <p class="billing__subtitle-counter">$475.00</p>
+                  </div>
+                  <div class="billing__subtitle">
+                    <h4 class="billing__subtitle-item">Shipping</h4>
+                    <p class="billing__subtitle-counter">$15.00</p>
+                  </div>
+                </div>
+                <div class="billing__info-box3">
+                  <p class="billing__total-title">Total</p>
+                  <p class="billing__total-text">$490.00</p>
+                </div>
+              </div>
+              <div class="billing__payment">
+                <h2 class="billing__payment-title">Payment</h2>
+                <form class="payment__form js-open-modal">
+                  <div class="payment__form-row1">
+                    <input class="payment__form-card" name="card" type="radio" />
+                    Credit card
+                    <div class="payment__form-icons">
+                      <img class="payment__form-img" src="images/payment-card1.svg" alt="visa" />
+                      <img class="payment__form-img" src="images/payment-card2.svg" alt="mastercard" />
+                    </div>
+                  </div>
+                  <div class="payment__form-row2">
+                    <label class="payment__lable payment__lable--hiden" for="card-number">Card number</label>
+                    <input class="payment__form-input" name="card-number" id="card-number" type="text" placeholder="Card number" required />
+                  </div>
+                  <div class="payment__form-row3">
+                    <label class="payment__lable payment__lable--hiden" for="name">Name on card</label>
+                    <input class="payment__form-input" name="name" id="name" type="text" placeholder="Name on card" required />
+                  </div>
+                  <div class="payment__form-row4">
+                    <div class="payment__form-field">
+                      <label class="payment__lable payment__lable--hiden" for="date">Expiration date (MM/YY)</label>
+                      <input class="payment__form-input" name="date" id="date" type="text" placeholder="Expiration date (MM/YY)" required />
+                    </div>
+                    <div class="payment__form-field">
+                      <label class="payment__lable payment__lable--hiden" for="code">Security code</label>
+                      <input class="payment__form-input" name="code" id="code" type="text" placeholder="Security code" required />
+                    </div>
+                  </div>
+                  <div class="payment__form-row5">
+                    <input class="payment__form-paypal" name="paypal" type="radio" />
+                    <img src="images/payment-paypal.svg" alt="paypal" />
+                  </div>
+                  <button class="payment__form-btn" type="submit">Place order</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer></footer>
+
+    <button type="button" class="btn__up" aria-label="scroll to top">
+      <img class="btn__up-img" src="images/btnUp.svg" alt="Up" />
+    </button>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

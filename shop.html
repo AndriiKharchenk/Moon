@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <title>Moon</title>
+  </head>
+  <body>
+    <header></header>
+
+    <main>
+      <nav class="breadcrumbs" aria-label="breadcrumb">
+        <div class="container">
+          <ul class="breadcrumbs__list">
+            <li class="breadcrumbs__item">
+              <a class="breadcrumbs__link" href="/">Home /</a>
+            </li>
+            <li class="breadcrumb__item">
+              <span>Shop</span>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <section class="shop">
+        <div class="container">
+          <div class="shop__inner">
+            <div class="shop__filter">
+              <h4 class="filter__title">Showing 120 items</h4>
+              <div class="filter__categories filter-box">
+                <h4 class="filter__title">Category</h4>
+                <div class="filter__group">
+                  <label class="filter__option">
+                    <input name="category" type="checkbox" value="dinnerware" />
+                    Dinnerware
+                  </label>
+                  <label class="filter__option">
+                    <input name="category" type="checkbox" value="ceramic" />
+                    Ceramic
+                  </label>
+                  <label class="filter__option">
+                    <input name="category" type="checkbox" value="furniture" />
+                    Furniture
+                  </label>
+                  <label class="filter__option">
+                    <input name="category" type="checkbox" value="decor-art" />
+                    Decor Art
+                  </label>
+                  <label class="filter__option">
+                    <input name="category" type="checkbox" value="gifts-sets" />
+                    Gifts sets
+                  </label>
+                </div>
+              </div>
+              <div class="filter__price filter-box">
+                <h4 class="filter__title">Price Range</h4>
+                <div class="filter__group">
+                  <label class="filter__option">
+                    <input name="price" type="checkbox" value="0 - 10" />
+                    $0 - $10
+                  </label>
+                  <label class="filter__option">
+                    <input name="price" type="checkbox" value="10 - 50" />
+                    $10 - $50
+                  </label>
+                  <label class="filter__option">
+                    <input name="price" type="checkbox" value="50 - 100" />
+                    $50 - $100
+                  </label>
+                  <label class="filter__option">
+                    <input name="price" type="checkbox" value="100 - 200" />
+                    $100 - $200
+                  </label>
+                  <label class="filter__option">
+                    <input name="price" type="checkbox" value="> 200" />
+                    > $200
+                  </label>
+                </div>
+              </div>
+              <div class="filter__color">
+                <h4 class="filter__title">Color</h4>
+                <div class="color__group">
+                  <label class="color__option">
+                    <input type="radio" name="color" value="all" checked />
+                    All
+                  </label>
+                  <label class="color__option">
+                    <input type="radio" name="color" value="white"/>
+                    <span class="color-box color-box--white" style="background: #ffffff"></span>
+                  </label>
+                  <label class="color__option">
+                    <input type="radio" name="color" value="brown" />
+                    <span class="color-box" style="background: #c69b7b"></span>
+                  </label>
+                  <label class="color__option">
+                    <input type="radio" name="color" value="grey" />
+                    <span class="color-box" style="background: #ccd8ce"></span>
+                  </label>
+                  <label class="color__option">
+                    <input type="radio" name="color" value="red" />
+                    <span class="color-box" style="background: #b4555d"></span>
+                  </label>
+                  <label class="color__option">
+                    <input type="radio" name="color" value="dark-grey" />
+                    <span class="color-box" style="background: #9b92a1"></span>
+                  </label>
+                </div>
+              </div>
+              <div class="filter__tags filter-box">
+                <h4 class="filter__title">Tags</h4>
+                <div class="filter__group">
+                  <label class="filter__option">
+                    <input name="tags" type="checkbox" value="dinnerware" />
+                    Dinnerware
+                  </label>
+                  <label class="filter__option">
+                    <input name="tags" type="checkbox" value="ceramic" />
+                    Ceramic
+                  </label>
+                  <label class="filter__option">
+                    <input name="tags" type="checkbox" value="furniture" />
+                    Furniture
+                  </label>
+                  <label class="filter__option">
+                    <input name="tags" type="checkbox" value="decor-art" />
+                    Decor Art
+                  </label>
+                  <label class="filter__option">
+                    <input name="tags" type="checkbox" value="gifts-sets" />
+                    Gifts sets
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="shop__cards">
+              <div class="shop__cards-inner">
+                <div class="shop__card" data-color="white" data-category="ceramic" data-price="35" data-tags="ceramic dinnerware">
+                  <a class="shop__card-image" href="product.html">
+                    <img src="images/shop-card1.jpg" width="255" height="321" alt="alttext" />
+                  </a>
+                  <h4 class="shop__card-title">Small Ecru Ceramic Compote</h4>
+                  <p class="shop__card-cost">$49.00</p>
+                  <p class="shop__card-text">Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit.</p>
+                  <button class="shop__card-btn" type="button">Add to cart</button>
+                </div>
+                <div class="shop__card" data-color="brown" data-category="ceramic" data-price="120" data-tags="decor-art dinnerware">
+                  <a class="shop__card-image" href="product.html">
+                    <img src="images/shop-card2.jpg" width="255" height="321" alt="alttext" />
+                  </a>
+                  <h4 class="shop__card-title">Porcelain Dinner Plate</h4>
+                  <p class="shop__card-cost">$49.00</p>
+                  <p class="shop__card-text">Lorem ipsum dolor sit amet conse bolli tetur.</p>
+                  <button class="shop__card-btn" type="button">Add to cart</button>
+                </div>
+                <div class="shop__card" data-color="grey" data-category="furniture" data-price="350" data-tags="ceramic decor-art">
+                  <a class="shop__card-image" href="product.html">
+                    <img src="images/shop-card3.jpg" width="255" height="321" alt="alttext" />
+                  </a>
+                  <h4 class="shop__card-title">Warrick White Vase 20</h4>
+                  <p class="shop__card-cost">$68.00</p>
+                  <p class="shop__card-text">Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.</p>
+                  <button class="shop__card-btn" type="button">Add to cart</button>
+                </div>
+                <div class="shop__card" data-color="red" data-category="dinnerware" data-price="200" data-tags="furniture dinnerware">
+                  <a class="shop__card-image" href="product.html">
+                    <img src="images/shop-card4.jpg" width="255" height="321" alt="alttext" />
+                  </a>
+                  <h4 class="shop__card-title">Marin White Dinner Plate</h4>
+                  <p class="shop__card-cost">$49.00</p>
+                  <p class="shop__card-text">Lorem ipsum dolor sit amet conse.</p>
+                  <button class="shop__card-btn" type="button">Add to cart</button>
+                </div>
+                <div class="shop__card" data-color="white" data-category="dinnerware" data-price="50" data-tags="ceramic dinnerware">
+                  <a class="shop__card-image" href="product.html">
+                    <img src="images/shop-card5.jpg" width="255" height="321" alt="alttext" />
+                  </a>
+                  <h4 class="shop__card-title">Tall Cream Ceramic Vase</h4>
+                  <p class="shop__card-cost">$79.00</p>
+                  <p class="shop__card-text">Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit.</p>
+                  <button class="shop__card-btn" type="button">Add to cart</button>
+                </div>
+                <div class="shop__card" data-color="red" data-category="gifts-sets" data-price="50" data-tags="ceramic dinnerware">
+                  <a class="shop__card-image" href="product.html">
+                    <img src="images/shop-card6.jpg" width="255" height="321" alt="alttext" />
+                  </a>
+                  <h4 class="shop__card-title">Luana Bowl</h4>
+                  <p class="shop__card-cost">$49.00</p>
+                  <p class="shop__card-text">Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.</p>
+                  <button class="shop__card-btn" type="button">Add to cart</button>
+                </div>
+                <div class="shop__card" data-color="red" data-category="gifts-sets" data-price="150" data-tags="furniture decor-art">
+                  <a class="shop__card-image" href="product.html">
+                    <img src="images/shop-card7.jpg" width="255" height="321" alt="alttext" />
+                  </a>
+                  <h4 class="shop__card-title">Ophelia Matte Natural Vase</h4>
+                  <p class="shop__card-cost">$149.00</p>
+                  <p class="shop__card-text">Lorem ipsum dolor sit amet conse bolli tetur.</p>
+                  <button class="shop__card-btn" type="button">Add to cart</button>
+                </div>
+                <div class="shop__card" data-color="white" data-category="decor-art" data-price="50" data-tags="ceramic dinnerware">
+                  <a class="shop__card-image" href="product.html">
+                    <img src="images/shop-card8.jpg" width="255" height="321" alt="alttext" />
+                  </a>
+                  <h4 class="shop__card-title">Luana Bowl</h4>
+                  <p class="shop__card-cost">$49.00</p>
+                  <p class="shop__card-text">Lorem ipsum dolor sit amet conse.</p>
+                  <button class="shop__card-btn" type="button">Add to cart</button>
+                </div>
+                <div class="shop__card" data-color="grey" data-category="decor-art" data-price="100" data-tags="dinnerware furniture">
+                  <a class="shop__card-image" href="product.html">
+                    <img src="images/shop-card9.jpg" width="255" height="321" alt="alttext" />
+                  </a>
+                  <h4 class="shop__card-title">Porcelain Dinner Plate</h4>
+                  <p class="shop__card-cost">$49.00</p>
+                  <p class="shop__card-text">Porcelain Dinner Plate</p>
+                  <button class="shop__card-btn" type="button">Add to cart</button>
+                </div>
+              </div>
+              <div class="pagination pagination-shop">
+                <button class="pagination__arrow">&lt;</button>
+                <ul class="pagination__list">
+                  <li class="pagination__item active">1</li>
+                  <li class="pagination__item next">2</li>
+                  <li class="pagination__item">3</li>
+                  <li class="pagination__item">4</li>
+                </ul>
+                <button class="pagination__arrow">&gt;</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer></footer>
+
+    <button type="button" class="btn__up" aria-label="scroll to top">
+      <img class="btn__up-img" src="images/btnUp.svg" alt="Up" />
+    </button>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
