@@ -5,7 +5,7 @@ This is an e-commerce website for selling decorative tableware.
 
 ## Screenshots
 
-![Shop page](images/scrin.jpg)
+![Shop page](images/scrin2.jpg)
 <!-- ![Home Page](screenshot.png) -->
 
 ## Technologies
