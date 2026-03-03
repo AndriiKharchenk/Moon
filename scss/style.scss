@@ -598,6 +598,10 @@ body.no-scroll {
       'foto2 content2'
       'content3 foto3';
   }
+  &__grid-picture img {
+    width: 100%;
+    object-fit: cover;
+  }
   &__grid-content {
     display: flex;
     flex-direction: column;
@@ -648,6 +652,10 @@ body.no-scroll {
     align-self: center;
     padding-left: 60px;
     padding-right: 34px;
+  }
+  &__picture-img {
+    width: 100%;
+    object-fit: cover;
   }
   &__content-title {
     font-family: 'EBGaramond-Bold';

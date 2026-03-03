@@ -676,6 +676,11 @@ body.no-scroll {
   background-color: #f7f6f5;
   grid-template-areas: "content1 foto1" "foto2 content2" "content3 foto3";
 }
+.about__grid-picture img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 .about__grid-content {
   display: flex;
   flex-direction: column;
@@ -732,6 +737,11 @@ body.no-scroll {
   align-self: center;
   padding-left: 60px;
   padding-right: 34px;
+}
+.work__picture-img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .work__content-title {
   font-family: "EBGaramond-Bold";
@@ -1950,6 +1960,26 @@ body.no-scroll {
   .arrivals__inner {
     grid-template-columns: repeat(2, 1fr);
   }
+  .about__grid {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+    grid-template-areas: "content1" "foto1" "content2" "foto2" "content3" "foto3";
+  }
+  .about__grid-content {
+    padding-top: 20px;
+  }
+  .work__inner {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .work__content {
+    text-align: center;
+    padding: 30px 0 0 0;
+  }
+  .team__inner {
+    grid-template-columns: repeat(2, 1fr);
+    justify-self: center;
+    gap: 20px;
+  }
 }
 @media (max-width: 750px) {
   .menu__list,
@@ -2020,6 +2050,9 @@ body.no-scroll {
     grid-template-columns: repeat(1, 1fr);
   }
   .arrivals__inner {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .team__inner {
     grid-template-columns: repeat(1, 1fr);
   }
 }/*# sourceMappingURL=style.css.map */

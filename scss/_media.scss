@@ -46,7 +46,6 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
- 
 
 @media (max-width: 780px) {
   .hero__inner {
@@ -76,6 +75,32 @@
   }
   .arrivals__inner {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .about__grid {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+    grid-template-areas:
+      'content1'
+      'foto1'
+      'content2'
+      'foto2'
+      'content3'
+      'foto3';
+  }
+  .about__grid-content {
+    padding-top: 20px;
+  }
+  .work__inner {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .work__content {
+    text-align: center;
+    padding: 30px 0 0 0;
+  }
+  .team__inner {
+    grid-template-columns: repeat(2, 1fr);
+    justify-self: center;
+    gap: 20px;
   }
 }
 
@@ -150,6 +175,9 @@
     grid-template-columns: repeat(1, 1fr);
   }
   .arrivals__inner {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .team__inner {
     grid-template-columns: repeat(1, 1fr);
   }
 }
