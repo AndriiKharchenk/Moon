@@ -297,7 +297,9 @@ body.no-scroll {
   }
 
   &__card-image img {
+    width: 100%;
     margin-bottom: 24px;
+    object-fit: cover;
   }
   &__card-title {
     font-family: 'Inter-SemiBold', sans-serif;
@@ -323,7 +325,7 @@ body.no-scroll {
     font-size: 12px;
     font-weight: 600;
     text-transform: uppercase;
-    padding: 15px 81px;
+    padding: 15px;
     border: 1px solid #3a3845;
     width: 100%;
     transition: all 0.4s ease;
@@ -357,6 +359,10 @@ body.no-scroll {
     margin-bottom: 24px;
     text-transform: uppercase;
   }
+  &__preview__picture img {
+    width: 100%;
+    object-fit: cover;
+  }
   &__content-text {
     margin-bottom: 47px;
   }
@@ -377,6 +383,8 @@ body.no-scroll {
     gap: 30px;
   }
   &__card-image img {
+    width: 100%;
+    object-fit: cover;
     margin-bottom: 24px;
   }
   &__card-title {
@@ -403,7 +411,7 @@ body.no-scroll {
     font-size: 12px;
     font-weight: 600;
     text-transform: uppercase;
-    padding: 15px 81px;
+    padding: 15px;
     width: 100%;
     border: 1px solid #3a3845;
     transition: all 0.4s ease;
@@ -443,6 +451,10 @@ body.no-scroll {
     text-transform: uppercase;
     margin-bottom: 24px;
     color: #807f86;
+  }
+  &__picture img {
+    width: 100%;
+    object-fit: cover;
   }
   &__content-title {
     font-family: 'EBGaramond-Bold';
@@ -498,7 +510,7 @@ body.no-scroll {
     border: none;
     border-bottom: 1px solid #3a3845;
     text-align: center;
-    padding: 14px 85px;
+    padding: 14px;
     max-width: 385px;
     width: 100%;
     margin-bottom: 32px;
