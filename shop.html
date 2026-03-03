@@ -27,114 +27,120 @@
       <section class="shop">
         <div class="container">
           <div class="shop__inner">
-            <div class="shop__filter">
-              <h4 class="filter__title">Showing 120 items</h4>
-              <div class="filter__categories filter-box">
-                <h4 class="filter__title">Category</h4>
-                <div class="filter__group">
-                  <label class="filter__option">
-                    <input name="category" type="checkbox" value="dinnerware" />
-                    Dinnerware
-                  </label>
-                  <label class="filter__option">
-                    <input name="category" type="checkbox" value="ceramic" />
-                    Ceramic
-                  </label>
-                  <label class="filter__option">
-                    <input name="category" type="checkbox" value="furniture" />
-                    Furniture
-                  </label>
-                  <label class="filter__option">
-                    <input name="category" type="checkbox" value="decor-art" />
-                    Decor Art
-                  </label>
-                  <label class="filter__option">
-                    <input name="category" type="checkbox" value="gifts-sets" />
-                    Gifts sets
-                  </label>
-                </div>
-              </div>
-              <div class="filter__price filter-box">
-                <h4 class="filter__title">Price Range</h4>
-                <div class="filter__group">
-                  <label class="filter__option">
-                    <input name="price" type="checkbox" value="0 - 10" />
-                    $0 - $10
-                  </label>
-                  <label class="filter__option">
-                    <input name="price" type="checkbox" value="10 - 50" />
-                    $10 - $50
-                  </label>
-                  <label class="filter__option">
-                    <input name="price" type="checkbox" value="50 - 100" />
-                    $50 - $100
-                  </label>
-                  <label class="filter__option">
-                    <input name="price" type="checkbox" value="100 - 200" />
-                    $100 - $200
-                  </label>
-                  <label class="filter__option">
-                    <input name="price" type="checkbox" value="> 200" />
-                    > $200
-                  </label>
-                </div>
-              </div>
-              <div class="filter__color">
-                <h4 class="filter__title">Color</h4>
-                <div class="color__group">
-                  <label class="color__option">
-                    <input type="radio" name="color" value="all" checked />
-                    All
-                  </label>
-                  <label class="color__option">
-                    <input type="radio" name="color" value="white"/>
-                    <span class="color-box color-box--white" style="background: #ffffff"></span>
-                  </label>
-                  <label class="color__option">
-                    <input type="radio" name="color" value="brown" />
-                    <span class="color-box" style="background: #c69b7b"></span>
-                  </label>
-                  <label class="color__option">
-                    <input type="radio" name="color" value="grey" />
-                    <span class="color-box" style="background: #ccd8ce"></span>
-                  </label>
-                  <label class="color__option">
-                    <input type="radio" name="color" value="red" />
-                    <span class="color-box" style="background: #b4555d"></span>
-                  </label>
-                  <label class="color__option">
-                    <input type="radio" name="color" value="dark-grey" />
-                    <span class="color-box" style="background: #9b92a1"></span>
-                  </label>
-                </div>
-              </div>
-              <div class="filter__tags filter-box">
-                <h4 class="filter__title">Tags</h4>
-                <div class="filter__group">
-                  <label class="filter__option">
-                    <input name="tags" type="checkbox" value="dinnerware" />
-                    Dinnerware
-                  </label>
-                  <label class="filter__option">
-                    <input name="tags" type="checkbox" value="ceramic" />
-                    Ceramic
-                  </label>
-                  <label class="filter__option">
-                    <input name="tags" type="checkbox" value="furniture" />
-                    Furniture
-                  </label>
-                  <label class="filter__option">
-                    <input name="tags" type="checkbox" value="decor-art" />
-                    Decor Art
-                  </label>
-                  <label class="filter__option">
-                    <input name="tags" type="checkbox" value="gifts-sets" />
-                    Gifts sets
-                  </label>
+            <div class="shop__filter-modal">
+              <div class="shop__filter-wrapper">
+                <button class="shop__filter-close" type="button">x</button>
+                <div class="shop__filter">
+                  <h4 class="filter__title">Showing 120 items</h4>
+                  <div class="filter__categories filter-box">
+                    <h4 class="filter__title">Category</h4>
+                    <div class="filter__group">
+                      <label class="filter__option">
+                        <input name="category" type="checkbox" value="dinnerware" />
+                        Dinnerware
+                      </label>
+                      <label class="filter__option">
+                        <input name="category" type="checkbox" value="ceramic" />
+                        Ceramic
+                      </label>
+                      <label class="filter__option">
+                        <input name="category" type="checkbox" value="furniture" />
+                        Furniture
+                      </label>
+                      <label class="filter__option">
+                        <input name="category" type="checkbox" value="decor-art" />
+                        Decor Art
+                      </label>
+                      <label class="filter__option">
+                        <input name="category" type="checkbox" value="gifts-sets" />
+                        Gifts sets
+                      </label>
+                    </div>
+                  </div>
+                  <div class="filter__price filter-box">
+                    <h4 class="filter__title">Price Range</h4>
+                    <div class="filter__group">
+                      <label class="filter__option">
+                        <input name="price" type="checkbox" value="0 - 10" />
+                        $0 - $10
+                      </label>
+                      <label class="filter__option">
+                        <input name="price" type="checkbox" value="10 - 50" />
+                        $10 - $50
+                      </label>
+                      <label class="filter__option">
+                        <input name="price" type="checkbox" value="50 - 100" />
+                        $50 - $100
+                      </label>
+                      <label class="filter__option">
+                        <input name="price" type="checkbox" value="100 - 200" />
+                        $100 - $200
+                      </label>
+                      <label class="filter__option">
+                        <input name="price" type="checkbox" value="> 200" />
+                        > $200
+                      </label>
+                    </div>
+                  </div>
+                  <div class="filter__color">
+                    <h4 class="filter__title">Color</h4>
+                    <div class="color__group">
+                      <label class="color__option">
+                        <input type="radio" name="color" value="all" checked />
+                        All
+                      </label>
+                      <label class="color__option">
+                        <input type="radio" name="color" value="white" />
+                        <span class="color-box color-box--white" style="background: #ffffff"></span>
+                      </label>
+                      <label class="color__option">
+                        <input type="radio" name="color" value="brown" />
+                        <span class="color-box" style="background: #c69b7b"></span>
+                      </label>
+                      <label class="color__option">
+                        <input type="radio" name="color" value="grey" />
+                        <span class="color-box" style="background: #ccd8ce"></span>
+                      </label>
+                      <label class="color__option">
+                        <input type="radio" name="color" value="red" />
+                        <span class="color-box" style="background: #b4555d"></span>
+                      </label>
+                      <label class="color__option">
+                        <input type="radio" name="color" value="dark-grey" />
+                        <span class="color-box" style="background: #9b92a1"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="filter__tags filter-box">
+                    <h4 class="filter__title">Tags</h4>
+                    <div class="filter__group">
+                      <label class="filter__option">
+                        <input name="tags" type="checkbox" value="dinnerware" />
+                        Dinnerware
+                      </label>
+                      <label class="filter__option">
+                        <input name="tags" type="checkbox" value="ceramic" />
+                        Ceramic
+                      </label>
+                      <label class="filter__option">
+                        <input name="tags" type="checkbox" value="furniture" />
+                        Furniture
+                      </label>
+                      <label class="filter__option">
+                        <input name="tags" type="checkbox" value="decor-art" />
+                        Decor Art
+                      </label>
+                      <label class="filter__option">
+                        <input name="tags" type="checkbox" value="gifts-sets" />
+                        Gifts sets
+                      </label>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
             <div class="shop__cards">
+              <button class="shop__filter-btn" type="button">Filter</button>
               <div class="shop__cards-inner">
                 <div class="shop__card" data-color="white" data-category="ceramic" data-price="35" data-tags="ceramic dinnerware">
                   <a class="shop__card-image" href="product.html">

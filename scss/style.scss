@@ -7,7 +7,8 @@
   margin: 0 auto;
 }
 
-html, body {
+html,
+body {
   overflow-x: hidden;
   width: 100%;
 }
@@ -1150,6 +1151,11 @@ body.no-scroll {
     flex-direction: column;
     max-width: 238px;
     width: 100%;
+    color: #000;
+  }
+  &__filter-btn {
+    display: none;
+    margin-left: auto;
   }
   &__cards-inner {
     display: grid;
@@ -1192,7 +1198,7 @@ body.no-scroll {
     font-size: 12px;
     font-weight: 600;
     text-transform: uppercase;
-    padding: 15px 81px;
+    padding: 15px;
     border: 1px solid #3a3845;
     width: 100%;
     transition: all 0.4s ease;
@@ -1201,6 +1207,19 @@ body.no-scroll {
   &__card-btn:hover {
     background-color: #3a3845;
     color: #fff;
+  }
+  &__filter-modal {
+    position: static;
+    background: none;
+    opacity: 1;
+    visibility: visible;
+  }
+  &__filter-wrapper {
+    position: static;
+    transform: none;
+  }
+  &__filter-close {
+    display: none;
   }
 }
 

@@ -96,7 +96,8 @@ button {
   margin: 0 auto;
 }
 
-html, body {
+html,
+body {
   overflow-x: hidden;
   width: 100%;
 }
@@ -1236,6 +1237,11 @@ body.no-scroll {
   flex-direction: column;
   max-width: 238px;
   width: 100%;
+  color: #000;
+}
+.shop__filter-btn {
+  display: none;
+  margin-left: auto;
 }
 .shop__cards-inner {
   display: grid;
@@ -1278,7 +1284,7 @@ body.no-scroll {
   font-size: 12px;
   font-weight: 600;
   text-transform: uppercase;
-  padding: 15px 81px;
+  padding: 15px;
   border: 1px solid #3a3845;
   width: 100%;
   transition: all 0.4s ease;
@@ -1287,6 +1293,19 @@ body.no-scroll {
 .shop__card-btn:hover {
   background-color: #3a3845;
   color: #fff;
+}
+.shop__filter-modal {
+  position: static;
+  background: none;
+  opacity: 1;
+  visibility: visible;
+}
+.shop__filter-wrapper {
+  position: static;
+  transform: none;
+}
+.shop__filter-close {
+  display: none;
 }
 
 .filter__title {
@@ -1903,6 +1922,49 @@ body.no-scroll {
   .arrivals__inner {
     grid-template-columns: repeat(3, 1fr);
   }
+  .shop__inner {
+    justify-self: center;
+  }
+  .shop__filter-btn {
+    display: flex;
+    cursor: pointer;
+  }
+  .shop__filter-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+  }
+  .shop__filter-modal.active {
+    opacity: 1;
+    visibility: visible;
+  }
+  .shop__filter-wrapper {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background: #fff;
+    transform: translateX(100%);
+    transition: 0.3s;
+    padding: 30px;
+  }
+  .shop__filter-modal.active .shop__filter-wrapper {
+    transform: translateX(0);
+  }
+  .shop__filter-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 30;
+  }
 }
 @media (max-width: 900px) {
   .footer__menu-list {
@@ -2029,6 +2091,9 @@ body.no-scroll {
   .main__content {
     padding: 30px;
   }
+  .shop__cards-inner {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 @media (max-width: 600px) {
   .footer__nav {
@@ -2072,5 +2137,11 @@ body.no-scroll {
   }
   .team__inner {
     grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media (max-width: 500px) {
+  .shop__cards-inner {
+    grid-template-columns: repeat(1, 1fr);
+    justify-self: center;
   }
 }/*# sourceMappingURL=style.css.map */

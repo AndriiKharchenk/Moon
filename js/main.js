@@ -1,5 +1,3 @@
-
-
 fetch('includes/header.html')
   .then((res) => res.text())
   .then((data) => {
@@ -13,12 +11,11 @@ fetch('includes/header.html')
       burger.addEventListener('click', () => {
         burger.classList.toggle('menu-open');
         menu.classList.toggle('menu-open');
-        body.classList.toggle('no-scroll')
+        body.classList.toggle('no-scroll');
       });
 
-
       document.addEventListener('keydown', (evt) => {
-        if(evt.key === 'Escape' && menu.classList.contains('menu-open')) {
+        if (evt.key === 'Escape' && menu.classList.contains('menu-open')) {
           burger.classList.remove('menu-open');
           menu.classList.remove('menu-open');
           body.classList.remove('no-scroll');
@@ -26,22 +23,18 @@ fetch('includes/header.html')
       });
 
       document.addEventListener('click', (evt) => {
-        if(menu.classList.contains('menu-open') && (!evt.target.closest('.menu') && !evt.target.closest('.burger'))) {
+        if (menu.classList.contains('menu-open') && !evt.target.closest('.menu') && !evt.target.closest('.burger')) {
           burger.classList.remove('menu-open');
           menu.classList.remove('menu-open');
           body.classList.remove('no-scroll');
         }
-      })
+      });
     }
   });
 
 fetch('includes/footer.html')
   .then((res) => res.text())
   .then((data) => (document.querySelector('footer').innerHTML = data));
-
-
-
-
 
 const images = ['images/hero1.jpg', 'images/hero2.jpg', 'images/hero3.jpg', 'images/hero4.jpg', 'images/hero5.jpg'];
 
@@ -64,12 +57,6 @@ if (hero) {
 
   setInterval(slide, 2500);
 }
-
-
-
-
-
-
 
 document.addEventListener('DOMContentLoaded', () => {
   const forms = document.querySelectorAll('form');
@@ -217,13 +204,11 @@ accordionItems.forEach((item) => {
   });
 });
 
-
 const cartContainer = document.querySelector('.cart__inner');
 const totalSubtotal = document.querySelector('.total__subtotal');
 const totalCart = document.querySelector('.total__cart-total');
 
 if (cartContainer && totalSubtotal && totalCart) {
-
   function updateCartTotals() {
     let subtotal = 0;
     const cartItems = cartContainer.querySelectorAll('.cart__item');
@@ -252,25 +237,21 @@ if (cartContainer && totalSubtotal && totalCart) {
 
     const input = item.querySelector('.cart__quantity-input');
 
-
     if (target.classList.contains('qty__btn--plus')) {
       input.value = parseInt(input.value) + 1;
       updateCartTotals();
     }
-
 
     if (target.classList.contains('qty__btn--minus')) {
       input.value = Math.max(1, parseInt(input.value) - 1);
       updateCartTotals();
     }
 
-
     if (target.tagName === 'BUTTON' && target.parentElement.classList.contains('cart__delete')) {
       item.remove();
       updateCartTotals();
     }
   });
-
 
   cartContainer.addEventListener('input', (e) => {
     const target = e.target;
@@ -282,6 +263,34 @@ if (cartContainer && totalSubtotal && totalCart) {
     }
   });
 
-
   updateCartTotals();
 }
+
+const btnFilter = document.querySelector('.shop__filter-btn');
+const modalFilter = document.querySelector('.shop__filter-modal');
+const body = document.body;
+const closeBtnModal = document.querySelector('.shop__filter-close');
+
+btnFilter.addEventListener('click', () => {
+  modalFilter.classList.add('active');
+  body.classList.add('no-scroll');
+});
+
+closeBtnModal.addEventListener('click', () => {
+  modalFilter.classList.remove('active');
+  body.classList.remove('no-scroll');
+});
+
+document.addEventListener('keydown', (evt) => {
+  if (evt.key === 'Escape' && modalFilter.classList.contains('active')) {
+    modalFilter.classList.remove('active');
+    body.classList.remove('no-scroll');
+  }
+});
+
+modalFilter.addEventListener('click', (e) => {
+  if (e.target === modalFilter) {
+    modalFilter.classList.remove('active');
+    body.classList.remove('no-scroll');
+  }
+});
