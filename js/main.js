@@ -1,10 +1,47 @@
+
+
 fetch('includes/header.html')
   .then((res) => res.text())
-  .then((data) => (document.querySelector('header').innerHTML = data));
+  .then((data) => {
+    document.querySelector('header').innerHTML = data;
+
+    const burger = document.querySelector('.burger');
+    const menu = document.querySelector('.menu');
+    const body = document.body;
+
+    if (burger && menu) {
+      burger.addEventListener('click', () => {
+        burger.classList.toggle('menu-open');
+        menu.classList.toggle('menu-open');
+        body.classList.toggle('no-scroll')
+      });
+
+
+      document.addEventListener('keydown', (evt) => {
+        if(evt.key === 'Escape' && menu.classList.contains('menu-open')) {
+          burger.classList.remove('menu-open');
+          menu.classList.remove('menu-open');
+          body.classList.remove('no-scroll');
+        }
+      });
+
+      document.addEventListener('click', (evt) => {
+        if(menu.classList.contains('menu-open') && (!evt.target.closest('.menu') && !evt.target.closest('.burger'))) {
+          burger.classList.remove('menu-open');
+          menu.classList.remove('menu-open');
+          body.classList.remove('no-scroll');
+        }
+      })
+    }
+  });
 
 fetch('includes/footer.html')
   .then((res) => res.text())
   .then((data) => (document.querySelector('footer').innerHTML = data));
+
+
+
+
 
 const images = ['images/hero1.jpg', 'images/hero2.jpg', 'images/hero3.jpg', 'images/hero4.jpg', 'images/hero5.jpg'];
 
@@ -30,16 +67,19 @@ if (hero) {
 
 
 
+
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
   const forms = document.querySelectorAll('form');
   const modal = document.querySelector('.modal');
 
   forms.forEach((form) => {
     form.addEventListener('submit', (evt) => {
-      evt.preventDefault(); 
+      evt.preventDefault();
       evt.stopPropagation();
 
-     
       if (form.classList.contains('js-open-modal') && modal) {
         modal.classList.add('active');
 
@@ -78,7 +118,6 @@ if (btnUp) {
     });
   });
 }
-
 
 const cards = document.querySelectorAll('.shop__card');
 const filterInputs = document.querySelectorAll('.shop__filter input');
@@ -142,9 +181,6 @@ function checkPriceRange(range, price) {
   return price >= min && price <= max;
 }
 
-
-
-
 const mainImage = document.querySelector('.product__main-img');
 const thumbnails = document.querySelectorAll('.thumb');
 
@@ -158,8 +194,6 @@ thumbnails.forEach((thumb) => {
   });
 });
 
-
-
 const accordionItems = document.querySelectorAll('.product__accordion-item');
 
 accordionItems.forEach((item) => {
@@ -167,7 +201,6 @@ accordionItems.forEach((item) => {
   const content = item.querySelector('.accordion__content');
 
   btn.addEventListener('click', () => {
-
     if (item.classList.contains('active-accordion')) {
       content.style.height = 0;
       item.classList.remove('active-accordion');
@@ -186,16 +219,10 @@ accordionItems.forEach((item) => {
   });
 });
 
-
-
-
-
-
 // Контейнер корзины и элементы с суммами
 const cartContainer = document.querySelector('.cart__inner');
 const totalSubtotal = document.querySelector('.total__subtotal');
 const totalCart = document.querySelector('.total__cart-total');
-
 
 if (cartContainer && totalSubtotal && totalCart) {
   // Функция пересчёта всех сумм
