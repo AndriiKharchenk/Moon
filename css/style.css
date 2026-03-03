@@ -1940,14 +1940,12 @@ body.no-scroll {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 0;
-    margin: 0;
+    align-items: center;
   }
   .hero__content {
     width: 100%;
     max-width: 100%;
     margin-left: 0;
-    margin-top: auto;
     padding: 40px 20px;
     height: auto;
   }
@@ -2024,6 +2022,13 @@ body.no-scroll {
     display: flex;
     opacity: 1;
   }
+  .main__inner {
+    align-items: center;
+    justify-self: center;
+  }
+  .main__content {
+    padding: 30px;
+  }
 }
 @media (max-width: 600px) {
   .footer__nav {
@@ -2040,6 +2045,19 @@ body.no-scroll {
   }
   .preview__content {
     padding: 20px 0;
+  }
+  .contacts__form-row1,
+  .contacts__form-row2 {
+    display: block;
+  }
+  .contacts__form-input {
+    margin-bottom: 20px;
+  }
+  .contacts__form {
+    gap: 0;
+  }
+  .contacts__form-row3 {
+    margin-bottom: 40px;
   }
 }
 @media (max-width: 550px) {

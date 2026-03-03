@@ -207,25 +207,23 @@ accordionItems.forEach((item) => {
       return;
     }
 
-    // закрываем остальные
     accordionItems.forEach((i) => {
       i.classList.remove('active-accordion');
       i.querySelector('.accordion__content').style.height = 0;
     });
 
-    // открываем текущий
     item.classList.add('active-accordion');
     content.style.height = content.scrollHeight + 'px';
   });
 });
 
-// Контейнер корзины и элементы с суммами
+
 const cartContainer = document.querySelector('.cart__inner');
 const totalSubtotal = document.querySelector('.total__subtotal');
 const totalCart = document.querySelector('.total__cart-total');
 
 if (cartContainer && totalSubtotal && totalCart) {
-  // Функция пересчёта всех сумм
+
   function updateCartTotals() {
     let subtotal = 0;
     const cartItems = cartContainer.querySelectorAll('.cart__item');
@@ -247,7 +245,6 @@ if (cartContainer && totalSubtotal && totalCart) {
     totalCart.textContent = `$${subtotal.toFixed(2)}`;
   }
 
-  // Делегируем события на контейнер
   cartContainer.addEventListener('click', (e) => {
     const target = e.target;
     const item = target.closest('.cart__item');
@@ -255,26 +252,26 @@ if (cartContainer && totalSubtotal && totalCart) {
 
     const input = item.querySelector('.cart__quantity-input');
 
-    // Кнопка +
+
     if (target.classList.contains('qty__btn--plus')) {
       input.value = parseInt(input.value) + 1;
       updateCartTotals();
     }
 
-    // Кнопка -
+
     if (target.classList.contains('qty__btn--minus')) {
       input.value = Math.max(1, parseInt(input.value) - 1);
       updateCartTotals();
     }
 
-    // Кнопка удаления
+
     if (target.tagName === 'BUTTON' && target.parentElement.classList.contains('cart__delete')) {
       item.remove();
       updateCartTotals();
     }
   });
 
-  // Обработка ручного ввода числа
+
   cartContainer.addEventListener('input', (e) => {
     const target = e.target;
     if (target.classList.contains('cart__quantity-input')) {
@@ -285,6 +282,6 @@ if (cartContainer && totalSubtotal && totalCart) {
     }
   });
 
-  // Инициализация при загрузке страницы
+
   updateCartTotals();
 }
