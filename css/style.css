@@ -1425,6 +1425,7 @@ body.no-scroll {
   padding: 19px 0px;
   background-color: #3a3845;
   transition: all 0.4s ease;
+  text-align: center;
 }
 .product__btn-cart:hover {
   background-color: transparent;
@@ -1437,6 +1438,7 @@ body.no-scroll {
   text-transform: uppercase;
   color: #3a3845;
   padding: 19px 0px;
+  text-align: center;
   border: 1px solid #3a3845;
   transition: all 0.4s ease;
 }
